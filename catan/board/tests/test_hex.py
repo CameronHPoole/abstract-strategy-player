@@ -1,4 +1,4 @@
-from catan.board.hex import Hex, Terrain
+from catan.board.hexes import Hex, Terrain
 import pytest
 
 class TestHex:
