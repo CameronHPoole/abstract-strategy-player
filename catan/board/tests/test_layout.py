@@ -1,4 +1,5 @@
-from catan.board.coord_layout import generate_board, STANDARD_BOARD_COORDS, STANDARD_BOARD_RADIUS
+from catan.board.board_layout import STANDARD_BOARD
+from catan.board.hex_layout import STANDARD_BOARD_COORDS, STANDARD_BOARD_RADIUS, generate_board
 from catan.board.coordinates import CubeCoord
 
 class TestLayout:
