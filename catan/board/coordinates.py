@@ -1,12 +1,13 @@
 from dataclasses import dataclass
 
+VertexID = frozenset
+EdgeID = frozenset
+
 @dataclass(frozen = True)
 class CubeCoord:
     q: int
     r: int
     s: int
-    VertexID = frozenset  # frozenset of 3 CubeCoords
-    EdgeID = frozenset    # frozenset of 2 CubeCoords
 
     def __post_init__(self):
         if self.q + self.r + self.s != 0:

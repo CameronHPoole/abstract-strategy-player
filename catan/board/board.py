@@ -26,10 +26,11 @@ class Board:
         # validate board
         if self.boardType == Setup.STANDARD:
             for coord, hex in self.tiles.items():
-                assert coord in STANDARD_BOARD_COORDS
+                if coord not in STANDARD_BOARD_COORDS:
+                    raise ValueError('Invalid hex coordinate')
 
     def get_hex_by_coord(self, coord: CubeCoord) -> Hex:
         return self.tiles[coord]
 
     def get_hex_by_token(self, token: int | None) -> list[CubeCoord]:
-        return self.coordByNumber[token]
+        return self.coordByNumber.get(token, [])
